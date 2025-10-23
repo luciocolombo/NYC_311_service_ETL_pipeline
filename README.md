@@ -1,4 +1,4 @@
-````
+
 # NYC 311 Service Requests – ETL Pipeline
 
 ## Overview
@@ -9,9 +9,9 @@ The project focuses on clarity, validation through assertions, and readable tran
 **Dataset:** [Kaggle – 311 Service Requests NYC](https://www.kaggle.com/datasets/pablomonleon/311-service-requests-nyc)
 
 To reproduce locally:
-```bash
+```
 kaggle datasets download -d pablomonleon/311-service-requests-nyc -p data/ --unzip
-````
+```
 
 The notebook reads the raw CSV from the `data/` folder.
 The raw file should not be uploaded to the repository due to its size.
@@ -107,7 +107,3 @@ Your data is ready, processed in 4.82s, resulting in 18456 rows and 12 columns
 **Category:** Data Cleaning / ETL
 **Language:** Python (Pandas)
 **Focus:** Real-world dataset transformation for analytics
-
-```
-
-```
