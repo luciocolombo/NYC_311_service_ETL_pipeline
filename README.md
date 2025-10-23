@@ -16,6 +16,22 @@ kaggle datasets download -d pablomonleon/311-service-requests-nyc -p data/ --unz
 The notebook reads the raw CSV from the `data/` folder.
 The raw file should not be uploaded to the repository due to its size.
 
+## Dataset Summary
+The raw dataset contains **364,558 rows** and **53 columns**, representing 311 service requests filed by NYC residents.  
+In this project, a configurable sample of **20,000 rows** is used for faster, reproducible ETL testing.
+
+| Feature type | Example columns | Notes |
+|---------------|----------------|-------|
+| **Identifiers** | `Unique Key` | Unique ticket ID for each request |
+| **Dates** | `Created Date`, `Closed Date`, `Due Date`, `Resolution Action Updated Date` | Stored as strings, later converted to `datetime` |
+| **Agency information** | `Agency`, `Agency Name` | Department responsible for the complaint |
+| **Complaint details** | `Complaint Type`, `Descriptor`, `Status` | Main categorical variables for analysis |
+| **Location** | `Incident Zip`, `City`, `Borough`, `Latitude`, `Longitude` | Used for spatial validation and filtering |
+| **Address details** | `Incident Address`, `Street Name`, `Cross Street 1`, `Cross Street 2` | Often partially missing |
+| **Education / Parks fields** | `School Name`, `Park Facility Name`, `School Region`, etc. | Usually constant or irrelevant for most analyses |
+| **Sparse fields** | `Vehicle Type`, `Bridge Highway Name`, `Ferry Terminal Name` | Contain mostly null values |
+
+
 ## Pipeline Structure
 
 The notebook defines clear modular functions and uses `DataFrame.pipe()` for a clean flow.
