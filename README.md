@@ -109,7 +109,7 @@ This produces a clean CSV ready for analysis.
 -  Measures runtime using `time.time()` for transparency
 
 ## Example Console Output
-
+(This is not exactly what is outputed)
 ```
 Loaded 20000 rows
 Removed 2 duplicated IDs
