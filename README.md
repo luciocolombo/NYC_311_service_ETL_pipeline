@@ -1,9 +1,21 @@
 
-# NYC 311 Service Requests – ETL Pipeline
+# NYC 311 Service Requests – ETL Pipeline (Pipe/Prefect)
 
 ## Overview
 A lightweight and reproducible ETL pipeline built in Python to clean and standardize the **NYC 311 Service Requests** dataset.
 The project focuses on clarity, validation through assertions, and readable transformations — aligned with a data analyst workflow.
+
+## Branches
+
+This repository contains two versions of the ETL pipeline:
+
+| Branch | Description |
+|---------|--------------|
+| **`master`** | Standard Pandas pipeline using `DataFrame.pipe()` — focuses on clarity and functional chaining inside a notebook. |
+| **`prefect`** | Alternative orchestration using **Prefect**. Each ETL step is defined as a `@task` within a `@flow`, enabling retries, logging, and execution control. Useful for production-style automation. |
+
+Both branches produce the same final dataset.  
+The Prefect version adds scheduling and observability features for workflow orchestration.
 
 ## Data Source
 **Dataset:** [Kaggle – 311 Service Requests NYC](https://www.kaggle.com/datasets/pablomonleon/311-service-requests-nyc)
