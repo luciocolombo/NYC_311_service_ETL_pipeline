@@ -24,7 +24,7 @@ To reproduce locally:
 ```
 kaggle datasets download -d pablomonleon/311-service-requests-nyc -p data/ --unzip
 ```
-
+A small sample is included in the repository (this is not the full dataset)
 The notebook reads the raw CSV from the `data/` folder.
 The raw file should not be uploaded to the repository due to its size.
 
