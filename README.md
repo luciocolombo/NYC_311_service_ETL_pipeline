@@ -17,6 +17,12 @@ This repository contains two versions of the ETL pipeline:
 Both branches produce the same final dataset.  
 The Prefect version adds scheduling and observability features for workflow orchestration.
 
+## CI (Github actions)
+
+Each push triggers a GitHub Actions pipeline that runs the ETL notebook with pytest + nbmake.
+It ensures all Pandera checks and assertions pass in a clean environment (and runs Prefect flows on the prefect branch).
+
+
 ## Data Source
 **Dataset:** [Kaggle – 311 Service Requests NYC](https://www.kaggle.com/datasets/pablomonleon/311-service-requests-nyc)
 
@@ -27,6 +33,7 @@ kaggle datasets download -d pablomonleon/311-service-requests-nyc -p data/ --unz
 A small sample is included in the repository (this is not the full dataset)
 The notebook reads the raw CSV from the `data/` folder.
 The raw file should not be uploaded to the repository due to its size.
+
 
 ## Dataset Summary
 The raw dataset contains **364,558 rows** and **53 columns**, representing 311 service requests filed by NYC residents.  
