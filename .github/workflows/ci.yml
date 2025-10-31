@@ -17,6 +17,6 @@ jobs:
       - run: pip install -r requirements.txt
       - name: Ejecutar notebooks como tests
         run: |
-          export DATA_PATH=data/sample_311.csv
+          export DATA_PATH=sample_311.csv
           export NROWS=5
           pytest -q --nbmake *.ipynb
