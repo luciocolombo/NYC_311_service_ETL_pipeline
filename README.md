@@ -21,6 +21,7 @@ The Prefect version adds scheduling and observability features for workflow orch
 
 Each push triggers a GitHub Actions pipeline that runs the ETL notebook with pytest + nbmake.
 It ensures all Pandera checks and assertions pass in a clean environment (and runs Prefect flows on the prefect branch).
+CI uses a sample dataset to allow to run without requiring real data to test deploy.
 
 
 ## Data Source
