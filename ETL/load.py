@@ -1,11 +1,18 @@
-#The dataset is very big and pandas has trouble assigning dtypes to the columns automatically because of bad data quality. We assign dtype=str and cast manually.
+# The dataset is very big and pandas has trouble assigning dtypes to the columns automatically because of bad data quality. We assign dtype=str and cast manually.
 import os
 import pandas as pd
-def load(rows):
-    print('Loaded sample of the total dataset, with some of the total columns only')
-    data_path = os.getenv("DATA_PATH", "./311_Service_Requests_from_2010_to_Present.csv") #prevents Github CI to break when no dataset is in remote repository. Use sample instead.
-    return pd.read_csv(data_path, dtype=str, nrows=rows, 
-        usecols = [
+
+
+def load(rows: int) -> pd.DataFrame:
+    print("Loaded sample of the total dataset, with some of the total columns only")
+    data_path = os.getenv(
+        "DATA_PATH", "./311_Service_Requests_from_2010_to_Present.csv"
+    )  # prevents Github CI to break when no dataset is in remote repository. Use sample instead.
+    return pd.read_csv(
+        data_path,
+        dtype=str,
+        nrows=rows,
+        usecols=[
             "Unique Key",
             "Created Date",
             "Closed Date",
@@ -31,8 +38,6 @@ def load(rows):
             "Garage Lot Name",
             "Intersection Street 2",
             "Road Ramp",
-            "Landmark"
-        ]
-
+            "Landmark",
+        ],
     )
-    
